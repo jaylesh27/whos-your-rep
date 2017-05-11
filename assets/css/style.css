@@ -1,3 +1,24 @@
-.container {
-	background-image: url("https://lovedfrst918.files.wordpress.com/2014/12/american_flag-2.jpg");
+.jumbotron {
+	background-color: red;
+	padding-top: 40px;
+	padding-bottom: 3px;
+	text-align: center;
+	font-style: italic;
+	font-family: serif;
+	font-size: 100px;
+	font-weight: bold;
+}
+
+.input-field {
+	background-color: red;
+}
+
+#map {
+	margin-top: 10px;
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+#profiles {
+	background-color: blue;
 }
