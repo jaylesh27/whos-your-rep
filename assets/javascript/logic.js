@@ -18,14 +18,13 @@ function findStateandCity (zipCode) {
 			var short_name = response.results[0].address_components[elements].short_name;
 			console.log(response.results[0].address_components[elements].short_name);
 			if (short_name.length === 2) {
-				console.log('running length');
 				state=short_name;
 				break;
 			}
 		}
+
 		console.log('State Found: ' + state);
 		runProPublicaAPI(state);
-		
 	});
 }
 
