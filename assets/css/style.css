@@ -13,6 +13,19 @@
 	background-color: red;
 }
 
+#search {
+	text-align: center;
+}
+
+#search-btn {
+	background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/600px-Flag_of_the_United_States.svg.png");
+	background-size: 300px, 50px; 
+	padding: 40px, 20px;
+	margin-left: 10%;
+	font-size: 20px;
+	font-weight: bold;
+}
+
 #map {
 	margin-top: 10px;
 	background-color: white;
