@@ -14,12 +14,21 @@
 
 </head>
 <body>
-	<div class="container">
-		<div class="jumbotron">
-			<h1>Congress Watch</h1>
-		</div>
+	<div class="jumbotron">Congress Watch</div>
+	<nav>
+	    <div class="nav-wrapper">
+		    <form>
+		        <div class="input-field">
+			        <input id="search" type="search" required>
+			        <i class="material-icons">close</i>
+			        <button class="btn waves-effect waves-light" type="submit" name="action" id="search-btn">Search</button>
+		        </div>
+		    </form>
+	    </div>
+  	</nav>
 
-		<div class="row">
+	<div class="container center">
+		<div class="row-center">
 			<div class="col s12 m8 l8" id="map">
 				<iframe width="600" 
 					height="450" 
@@ -29,18 +38,23 @@
 					allowfullscreen>
 				</iframe>
 			</div>
-		</div>
-
-		<div class="row">
-			<div class="col s12 m4 l4" id="profiles"></div>
-		</div>
+		</div>	
 	</div>
+
+	<div class="row">
+		<div class="col s12 m4 l4" id="profiles"></div>
+	</div>
+
+	<footer>
+        &copy 2017 Copyright Watchmen
+    </footer>       
 
 	<!--jQuery/Javascript Links-->
 	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 	<script src='assets/javascript/engine.js'></script>
+	<script src='assets/javascript/propublica.js'></script>
   	<!-- Compiled and minified JavaScript of Materialize-->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>s
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </body>
 </html>
