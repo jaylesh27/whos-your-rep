@@ -20,5 +20,13 @@
 }
 
 #profiles {
+	width: 100%;
+	background-color: blue;
+}
+
+footer {
+	padding: 10px;
+	text-align: center;
+	color: white;
 	background-color: blue;
 }
