@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
 	function proPublicaAPI (state) {
 		var stateId = state;
 		console.log(stateId);
@@ -9,7 +11,7 @@ $(document).ready(function() {
 		// var queryURL = "https://api.propublica.org/congress/v1/members/senate/" + stateId +"/current.json";
 
 		// var queryURL = "https://api.propublica.org/congress/v1/80-115/senate/members.json";
-	    console.log(queryURL);
+	    //console.log(queryURL);
 
 		$.ajax({
 	         url: queryURL,
@@ -19,17 +21,29 @@ $(document).ready(function() {
 	       }).done(function(data){
 	       		var propublicaResults = data.results;
 	       		console.log(propublicaResults);
-	       		console.log(data.results[0].name);
+	       		//console.log(propublicaResults.results[0].name);
 	       		for (var i = 0; i < propublicaResults.length; i++) {
-	       			$("#profiles").append("<p>" + data.results[i].name + "</p>" );
+
+
+	       			$("#profiles").append(
+	       					"<div class='col s12 m6'>" + 
+	       						"<div class='card'>" +
+	       							"<div class='card-image'>" + 
+	       							"<img src='https://twitter.com/" + propublicaResults[i].twitter_id +"/profile_image?size=original'>" +
+	       							"<span class = 'card-title'>" + 
+	       							propublicaResults[i].name + "</span>" +
+	       							"</div>" + 
+	       							"<div class='card-content'>" + 
+	       							"<p> Above is a very useless congressman</p>" + 
+	       							"</div>" +
+	       						"</div>" + 
+	       					"</div>"
+ 	       				);
 	       		}
 	       });
 
-
-
 	};
 
-
-
+proPublicaAPI("NJ");
 
 });
