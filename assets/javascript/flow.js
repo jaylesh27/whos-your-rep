@@ -13,9 +13,6 @@ function bipartisanScore(party, democratVotes, republicanVotes) {
 }
 
 //clear Profiles
-function clearProfiles() {
-	$('#profiles').html('');
-}
 
 //User enters ZipCode and presses Search
 $('#search-btn').on('click', function () {

@@ -1,7 +1,3 @@
-$(document).ready(function() {
-
-
-
 	function proPublicaAPI (state) {
 		var stateId = state;
 		console.log(stateId);
@@ -43,7 +39,3 @@ $(document).ready(function() {
 	       });
 
 	};
-
-proPublicaAPI("NJ");
-
-});
