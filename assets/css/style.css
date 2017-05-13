@@ -13,6 +13,12 @@
 	background-color: red;
 }
 
+.card-image {
+	display: inline-block;
+	max-width: 200px;
+	max-height: 200px;
+}
+
 #search {
 	text-align: center;
 }
@@ -25,7 +31,7 @@
 
 #profiles {
 	width: 100%;
-	background-color: blue;
+	background-image: url("../images/weather.png");
 }
 
 footer {
@@ -33,11 +39,6 @@ footer {
 	text-align: center;
 	color: white;
 	background-color: blue;
-	position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 50px;
-    width: 100%;
 }
 
 #gMap {
