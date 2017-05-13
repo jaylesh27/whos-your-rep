@@ -35,6 +35,20 @@ function findStateandCity (zipCode) {
 	});
 }
 
-function runProPublicaAPI (state) {
-	console.log('The State is ' + state);
+//checks if Zipcode put in search bar is at least reasonable
+function zipcodeIsValid (zipcode) {
+	//if zipcode isn't 5 long, automatically wrong
+	if (zipcode.length != 5) {
+		return false;
+	} else {
+		//loop through 5 chars, and make sure each are a number
+		for (var i = 0; i < 5; i++) {
+			//if the current character is a non-number
+			if(zipcode.charCodeAt(i) < 48 || zipcode.charCodeAt(i) > 57) {
+				return false;
+			}
+		}
+		//if there was not a single non-number and the length is 5, return true
+		return true;
+	}
 }
