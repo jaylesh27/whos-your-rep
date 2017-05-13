@@ -1,6 +1,28 @@
 var googleMapsAPI = 'AIzaSyAQ34rbfQcs_hp036e8ORnMuoAfULzj74U';
 var longitude, latitude;
 
+//checks if Zipcode put in search bar is at least reasonable
+function zipcodeIsValid (zipcode) {
+	//if zipcode isn't 5 long, automatically wrong
+	if (zipcode.length != 5) {
+		return false;
+	} else {
+		//loop through 5 chars, and make sure each are a number
+		for (var i = 0; i < 5; i++) {
+			//if the current character is a non-number
+			if(zipcode.charCodeAt(i) < 48 || zipcode.charCodeAt(i) > 57) {
+				return false;
+			}
+		}
+		//if there was not a single non-number and the length is 5, return true
+		return true;
+	}
+}
+
+function clearProfiles() {
+	$('#profiles').html('');
+}
+
 //Possible To-Do - make array to check state codes against AL, NJ, TX, etc
 function findStateAndCity (zipCode) {	
 	var queryURL = 'https://maps.googleapis.com/maps/api/geocode/json?address='+zipCode;
@@ -45,31 +67,14 @@ function findStateAndCity (zipCode) {
 			}
 			$('#gMap').attr('src', baseCenterMap);
 			//If YES
-				//Get what STATE they are from in and feed it to Propublica API
-				proPublicaAPI(state);
+			//clear current profile div
+			clearProfiles();
+			//Get what STATE they are from in and feed it to Propublica 
+			proPublicaAPI(state);
 					//Propublica Sends request for members using STATE
 						//Propublica recieves State senators info and twitter handle
 							//feed twitter Handle to twitterGetProfilePics() function
 								//populate DOM with	
 		}
-		 
 	});
-}
-
-//checks if Zipcode put in search bar is at least reasonable
-function zipcodeIsValid (zipcode) {
-	//if zipcode isn't 5 long, automatically wrong
-	if (zipcode.length != 5) {
-		return false;
-	} else {
-		//loop through 5 chars, and make sure each are a number
-		for (var i = 0; i < 5; i++) {
-			//if the current character is a non-number
-			if(zipcode.charCodeAt(i) < 48 || zipcode.charCodeAt(i) > 57) {
-				return false;
-			}
-		}
-		//if there was not a single non-number and the length is 5, return true
-		return true;
-	}
 }

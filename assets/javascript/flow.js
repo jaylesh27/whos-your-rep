@@ -1,3 +1,22 @@
+//returns % of how often someone votes party line, or in case of independents, their leaning
+function bipartisanScore(party, democratVotes, republicanVotes) {
+	var biPartsianScore;
+	if( party == 'D') {
+		biPartisanScore = (democratVotes) / (democratVotes + republicanVotes);
+	} else if (party == 'R') {
+		biPartsianScore = (republicanVotes) / (democratVotes + republicanVotes);
+	} else {
+		// + number means republican leaning, - means democratic leaning
+		biPartisanScore = (republicanVotes - democratVotes) / (democratVotes + republicanVotes);
+	}
+	return bipartisanScore;
+}
+
+//clear Profiles
+function clearProfiles() {
+	$('#profiles').html('');
+}
+
 //User enters ZipCode and presses Search
 $('#search-btn').on('click', function () {
 	event.preventDefault();
