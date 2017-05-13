@@ -1,26 +1,33 @@
 $(document).ready(function() {
 
-	$("#search-btn").on("click", function() {
-		var stateId = $(this);
+	function proPublicaAPI (state) {
+		var stateId = state;
 		console.log(stateId);
 
-		//assign the API link to this variable
-		// var queryURL = "https://api.propublica.org/congress/v1/102-115/house/members.json";
+		var queryURL = "https://api.propublica.org/congress/v1/members/house/" + stateId +"/current.json";
 
-		var queryURL = "https://api.propublica.org/congress/v1/members/K000388.json";
+		// var queryURL = "https://api.propublica.org/congress/v1/members/senate/" + stateId +"/current.json";
+
+		// var queryURL = "https://api.propublica.org/congress/v1/80-115/senate/members.json";
+	    console.log(queryURL);
 
 		$.ajax({
-			url: queryURL,
-			method: "GET"
-		}).done(function(response) {
+	         url: queryURL,
+	         method: "GET",
+	         dataType: 'json',
+	         headers: {'X-API-Key': '45Jqi2YUkG5u36euvspZI9yLR0dAOrz545XRSwW1'}
+	       }).done(function(data){
+	       		var propublicaResults = data.results;
+	       		console.log(propublicaResults);
+	       		console.log(data.results[0].name);
+	       		for (var i = 0; i < propublicaResults.length; i++) {
+	       			$("#profiles").append("<p>" + data.results[i].name + "</p>" );
+	       		}
+	       });
 
-			var results = response.data;
-			console.log(results);
-		});
 
 
-
-	});
+	};
 
 
 
