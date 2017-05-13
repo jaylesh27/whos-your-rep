@@ -39,3 +39,8 @@ footer {
     height: 100px;
     width: 100%;
 }
+
+#gMap {
+    width: 100%;
+    height: 400px;
+}
