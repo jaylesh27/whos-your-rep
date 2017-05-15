@@ -36,4 +36,6 @@ $('#search-btn').on('click', function () {
 								//feed twitter Handle to twitterGetProfilePics() function
 									//populate DOM with 
 	}
+	//added this to clear the input field out after user hits button
+	$('#search').val("");
 });
