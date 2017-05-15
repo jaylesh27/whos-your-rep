@@ -29,7 +29,7 @@ function proPublicaAPI (state) {
 					// "</div>"
 
 					"<li>" + 
-						"<div class='collapsible-header' id = 'rep'>" + 
+						"<div class='collapsible-header rep' id = 'rep-"+i+"'>" + 
 							propublicaResults[i].name + 
 						"</div>" + 
 						"<div class='collapsible-body'>" +
@@ -42,14 +42,13 @@ function proPublicaAPI (state) {
 					"</li>"
 
 	       		);
-	       	$("#rep").attr("rep-ID", propublicaResults[i].id);
+	       	$("#rep-"+i).attr("rep-ID", propublicaResults[i].id);
 	       	console.log($("#rep").attr("rep-ID"));
-
        		}
        });
 };
 
-$("#profiles").on("click", "#rep", function() {
+$("#profiles").on("click", ".rep", function() {
 	$('#infoPanel').html('');
 	console.log("you clicked on a congressman!");
 	var repID = $(this).attr("rep-ID");
