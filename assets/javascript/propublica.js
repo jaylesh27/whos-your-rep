@@ -9,7 +9,6 @@ function proPublicaAPI (state) {
          method: "GET",
          dataType: 'json',
          headers: {'X-API-Key': '45Jqi2YUkG5u36euvspZI9yLR0dAOrz545XRSwW1'}
-
        }).done(function(data) {
        		var propublicaResults = data.results;
        		//console.log(propublicaResults);
