@@ -13,9 +13,6 @@ function bipartisanScore(party, democratVotes, republicanVotes) {
 }
 
 //clear Profiles
-function clearProfiles() {
-	$('#profiles').html('');
-}
 
 //User enters ZipCode and presses Search
 $('#search-btn').on('click', function () {
@@ -39,4 +36,6 @@ $('#search-btn').on('click', function () {
 								//feed twitter Handle to twitterGetProfilePics() function
 									//populate DOM with 
 	}
+	//added this to clear the input field out after user hits button
+	$('#search').val("");
 });
