@@ -38,4 +38,5 @@ $('#search-btn').on('click', function () {
 	}
 	//added this to clear the input field out after user hits button
 	$('#search').val("");
+	$("#search-label").removeClass("active");
 });
