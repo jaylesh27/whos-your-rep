@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+	$('.parallax').parallax();
 
 	function proPublicaAPI (state) {
 		var stateId = state;
