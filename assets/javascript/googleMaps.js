@@ -18,15 +18,17 @@ var shortState = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "H
 function stateValid(stateName) {
 	var valid = false;
 	var index = 0;
+	var inital;
 	while(valid != true && index < fullState.length){
 		if(stateName === fullState[index]){
 			valid = true;
+			inital = shortState[index];
 		}
 		else {
 			index++;
 		}
 	}
-	return valid;
+	return inital;
 }
 //verifies initals of state and returns it if it is a state inital
 function initalValid(initals) {
