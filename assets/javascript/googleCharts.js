@@ -1,16 +1,28 @@
-// google.charts.load('current', {packages: ['corechart']});
+// Load the Visualization API and the corechart package
+google.charts.load('current', {packages: ['corechart']});
+// Set a callback to run when the Google Visualization API is loaded
 // google.charts.setOnLoadCallback(drawChart);
 
-// function drawChart() {
-// 	var data = google.visualization.arrayToDataTable([
-// 		 ['Element', 'Density', { role: 'style' }],
-// 		 ['Copper', 8.94, '#b87333'],            // RGB value
-// 		 ['Silver', 10.49, 'silver'],            // English color name
-// 		 ['Gold', 19.30, 'gold'],
+function drawChart() {
 
-// 		['Platinum', 21.45, 'color: #e5e4e2' ], // CSS-style declaration
-// 		]);
+	// Create the data table.
+	var data = new google.visualization.DataTable();
+	data.addColumn('string', 'Topping');
+	data.addColumn('number', 'Slices');
+	data.addRows([
+		['Mushrooms', 3],
+		['Onions', 1],
+		['Olives', 1],
+		['Zucchini', 1],
+		['Pepperoni', 2]
+	]);
 
-// 	  var chart = new google.visualization.ColumnChart(document.getElementById('infoPanel'));
-//       chart.draw(data, null);
-// }
+	// Set chart options
+	var options = {'title':'What is your rep up to?',
+					'width':700,
+					'height':500};
+
+	// Instantiate and draw our chart, passing in some options.
+	var chart = new google.visualization.ColumnChart(document.getElementById('infoPanel'));
+		chart.draw(data, options);
+	}

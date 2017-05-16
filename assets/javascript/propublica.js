@@ -54,9 +54,11 @@ $("#profiles").on("click", ".rep", function() {
        		var memberResults = data.results;
        		console.log(memberResults);
        		console.log(memberResults[0].roles[0].votes_with_party_pct);
-       		$("#infoPanel").html(memberResults[0].roles[0].votes_with_party_pct);
-
+       		// $("#infoPanel").html(memberResults[0].roles[0].votes_with_party_pct);
+       		drawChart();
+       		Materialize.fadeInImage('#infoPanel');
        });
+
 });
 
 // $(document).ready(function(){
