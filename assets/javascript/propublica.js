@@ -15,19 +15,6 @@ function proPublicaAPI (state) {
        		//console.log(propublicaResults);
        		for (var i = 0; i < propublicaResults.length; i++) {
        			$("#profiles").append(
-
-					// "<div class='card medium'>" +
-					// 	"<div class='card-image'>" + 
-					// 		"<img src='https://twitter.com/" + propublicaResults[i].twitter_id +"/profile_image?size=original'>" +
-					// 		"<span class = 'card-title'>" + 
-					// 			propublicaResults[i].name +
-					// 		"</span>" +
-					// 	"</div>" + 
-					// 	"<div class='card-content'>" + 
-					// 		"<p>A useless congressman</p>" + 
-					// 	"</div>" +
-					// "</div>"
-
 					"<li>" + 
 						"<div class='collapsible-header rep' id = 'rep-"+i+"'>" + 
 							propublicaResults[i].name + 
@@ -43,8 +30,9 @@ function proPublicaAPI (state) {
 
 	       		);
 	       	$("#rep-"+i).attr("rep-ID", propublicaResults[i].id);
-	       	console.log($("#rep").attr("rep-ID"));
+	       	// console.log($("#rep").attr("rep-ID"));
        		}
+       		Materialize.showStaggeredList('#profiles');
        });
 };
 
@@ -70,3 +58,7 @@ $("#profiles").on("click", ".rep", function() {
 
        });
 });
+
+// $(document).ready(function(){
+// 	$('.parallax').parallax();
+// });
