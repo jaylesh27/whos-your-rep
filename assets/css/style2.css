@@ -58,3 +58,11 @@ p {
 #congress-image {
 	width: 100%;
 }
+
+h4 {
+	text-align: left;
+	font-family: 'Times New Roman';
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #000000;
+}
