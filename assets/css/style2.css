@@ -4,6 +4,11 @@
 	overflow: auto;
 }
 
+#infoPanel {
+	float: right;
+	margin-right: 100px;
+}
+
 .nav-wrapper, #search-btn {
 	background-color: #20315a;
 }
@@ -21,7 +26,7 @@
 }*/
 
 
-img {
+#rep-image {
 	display: inline-block;
 	max-width: 250px;
 	max-height: 200px;
@@ -48,4 +53,8 @@ p {
 #gMap {
     width: 100%;
     height: 400px;
+}
+
+#congress-image {
+	width: 100%;
 }
