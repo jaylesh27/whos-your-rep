@@ -51,8 +51,8 @@ $("#profiles").on("click", ".rep", function() {
 
        }).done(function(data) {
        		var memberResults = data.results;
-       		console.log(memberResults);
-       		console.log(memberResults[0].roles[0].votes_with_party_pct);
+       		//console.log(memberResults);
+       		//console.log(memberResults[0].roles[0].votes_with_party_pct);
        		// $("#infoPanel").html(memberResults[0].roles[0].votes_with_party_pct);
        		drawChart();
        		Materialize.fadeInImage('#infoPanel');
