@@ -3,11 +3,12 @@ google.charts.load('current', {packages: ['corechart']});
 // Set a callback to run when the Google Visualization API is loaded
 // google.charts.setOnLoadCallback(drawChart);
 
-function drawChart() {
-
+function drawChart(crID) {
+	console.log('Drawing Chart');
 	var openSecretsAPI = '0e11c0ea5a983dc2004af32bd38156c1';
 
-	var baseQuery = 'https://crossorigin.me/http://www.opensecrets.org/api/?method=candIndustry&output=json&cid=N00007360&cycle=2016&apikey='+openSecretsAPI;
+	var baseQuery = 'https://crossorigin.me/http://www.opensecrets.org/api/?method=candIndustry&output=json&cid=' + crID + '&cycle=2016&apikey='+openSecretsAPI;
+	console.log('Base Query');
 	console.log(baseQuery);
 	$.ajax({
 		url: baseQuery,
