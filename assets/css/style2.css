@@ -4,9 +4,14 @@
 	overflow: auto;
 }
 
-#infoPanel {
-	float: right;
-	margin-right: 100px;
+#info-panel {
+	width: 100%;
+	height: 500px;
+}
+
+#directions {
+	background-image: url("../images/chamber-01.jpg");
+	padding: 10px;
 }
 
 .nav-wrapper, #search-btn {
@@ -26,12 +31,12 @@
 }*/
 
 
-#rep-image {
+/*#rep-image {
 	display: inline-block;
 	max-width: 250px;
 	max-height: 200px;
 }
-
+*/
 #search-btn {
 	margin-top: 25px;
 }

@@ -127,3 +127,8 @@ $("#senateMembers").on("click", ".sen", function() {
        		Materialize.fadeInImage('#infoDiv');
        });
 });
+
+
+$(document).ready(function(){
+$('.carousel.carousel-slider').carousel({fullWidth: true});
+});
