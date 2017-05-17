@@ -114,10 +114,11 @@ function findStateAndCity (zipCode) {
 			}
 			$('#gMap').attr('src', baseCenterMap);
 			//If YES
-			//clear current profile div
-			clearProfiles();
+			//clear current reps/senators
+			clearMembers();
 			//Get what STATE they are from in and feed it to Propublica 
-			proPublicaAPI(state);
+			proPublicaAPI(state, 'senate');
+			proPublicaAPI(state, 'house');
 					//Propublica Sends request for members using STATE
 						//Propublica recieves State senators info and twitter handle
 							//feed twitter Handle to twitterGetProfilePics() function

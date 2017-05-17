@@ -42,7 +42,7 @@ function drawChart() {
 						'height':500};
 
 		// Instantiate and draw our chart, passing in some options.
-		var chart = new google.visualization.PieChart(document.getElementById('infoPanel'));
+		var chart = new google.visualization.PieChart(document.getElementById('infoDiv'));
 		chart.draw(data, options);
 		});
 	};
