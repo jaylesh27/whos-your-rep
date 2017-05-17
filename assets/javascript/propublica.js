@@ -20,7 +20,7 @@ function proPublicaAPI (state) {
 						"</div>" + 
 						"<div class='collapsible-body'>" +
 						"<span>" +
-							"<img src='https://twitter.com/" + propublicaResults[i].twitter_id +"/profile_image?size=original'>" +
+							"<img src='https://twitter.com/" + propublicaResults[i].twitter_id +"/profile_image?size=original' id = 'rep-image'>" +
 							"<p>Party: " + propublicaResults[i].party + "</p>" +
 							"<p>District: " + propublicaResults[i].district + "</p>" +
 						"</span>" + 
