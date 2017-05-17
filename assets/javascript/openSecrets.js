@@ -20,5 +20,3 @@ function getContributionSummary (crID){
 
 	});
 }
-
-getContributionSummary(norcross);
