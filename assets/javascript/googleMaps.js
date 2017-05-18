@@ -1,5 +1,4 @@
 var googleMapsAPI = 'AIzaSyAQ34rbfQcs_hp036e8ORnMuoAfULzj74U';
-var longitude, latitude;
 
 var fullState = ['alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado', 
 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii', 'idaho', 'illinois', 
@@ -72,6 +71,34 @@ function clearProfiles() {
 	$('#profiles').html('');
 }
 
+function findState(state) {
+	console.log('Runnign findState for: ' + state);
+	var queryURL = 'https://maps.googleapis.com/maps/api/geocode/json?address='+state;
+	var longitude, latitude;
+	
+	$.ajax({
+		url: queryURL,
+		method: 'GET'
+	}).done(function (response) {
+		console.log(response);
+		var test = response.results[0].geometry.location;
+		longitude = response.results[0].geometry.location.lng;
+		latitude = response.results[0].geometry.location.lat;
+		var baseCenterMap = 'https://www.google.com/maps/embed/v1/view?key='+googleMapsAPI+'&center='+latitude+','+longitude+'&zoom=6';
+		$('#gMap').attr('src', baseCenterMap);
+			//If YES
+			//clear current reps/senators
+			clearMembers();
+			//Get what STATE they are from in and feed it to Propublica 
+			proPublicaAPI(state, 'senate');
+			proPublicaAPI(state, 'house');
+					//Propublica Sends request for members using STATE
+						//Propublica recieves State senators info and twitter handle
+							//feed twitter Handle to twitterGetProfilePics() function
+								//populate DOM with	
+	});
+}
+
 //Possible To-Do - make array to check state codes against AL, NJ, TX, etc
 function findStateAndCity (zipCode) {	
 	var queryURL = 'https://maps.googleapis.com/maps/api/geocode/json?address='+zipCode;
@@ -81,6 +108,7 @@ function findStateAndCity (zipCode) {
 	}).done(function (response) {
 		//extract State and longitude/latitude from Zip Code
 		var state;
+		var longitude, latitude;
 		console.log(response);
 		var test = response.results[0].geometry.location;
 		longitude = response.results[0].geometry.location.lng;
