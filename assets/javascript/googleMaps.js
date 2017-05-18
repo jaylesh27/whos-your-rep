@@ -1,27 +1,28 @@
 var googleMapsAPI = 'AIzaSyAQ34rbfQcs_hp036e8ORnMuoAfULzj74U';
 var longitude, latitude;
 
-var fullState = ["alabama", "alaska", "arizona", "arkansas", "california", "colorado", 
-"connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", "illinois", 
-"indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland", 
-"massachusetts", "michigan", "minnesota", "mississippi", "missouri", "montana", 
-"nebraska", "nevada", "new hampshire",	"new jersey", "new mexico", "new york", 
-"north carolina", "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania", 
-"rhode island", "south carolina", "south dakota", "tennessee", "texas", "utah", 
-"vermont", "virginia", "washington", "west virginia", "wisconsin", "wyoming"];	
+var fullState = ['alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado', 
+'connecticut', 'delaware', 'florida', 'georgia', 'hawaii', 'idaho', 'illinois', 
+'indiana', 'iowa', 'kansas', 'kentucky', 'louisiana', 'maine', 'maryland', 
+'massachusetts', 'michigan', 'minnesota', 'mississippi', 'missouri', 'montana', 
+'nebraska', 'nevada', 'new hampshire',	'new jersey', 'new mexico', 'new york', 
+'north carolina', 'north dakota', 'ohio', 'oklahoma', 'oregon', 'pennsylvania', 
+'rhode island', 'south carolina', 'south dakota', 'tennessee', 'texas', 'utah', 
+'vermont', 'virginia', 'washington', 'west virginia', 'wisconsin', 'wyoming'];	
 
-var shortState = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", 
-"ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", 
-"MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK","OR", "PA", "RI", 
-"SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"];
+var shortState = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 
+'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 
+'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 
+'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
 
 //verifies state name 
 function stateValid(stateName) {
+	var search = stateName.toLowerCase();
 	var valid = false;
 	var index = 0;
 	var inital;
 	while(valid != true && index < fullState.length){
-		if(stateName === fullState[index]){
+		if(search === fullState[index]){
 			valid = true;
 			inital = shortState[index];
 		}
@@ -33,13 +34,14 @@ function stateValid(stateName) {
 }
 //verifies initals of state and returns it if it is a state inital
 function initalValid(initals) {
+	var search = initals.toUpperCase();
 	var valid = false;
 	var index = 0;
 	var inital;
 	while(valid != true && index < shortState.length){
-		if(initals === shortState[index]){
+		if(search === shortState[index]){
 			valid = true;
-			inital = initals;
+			inital = search;
 		}
 		else {
 			index++;
