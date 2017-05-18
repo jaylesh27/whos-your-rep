@@ -24,7 +24,7 @@ $('#search-btn').on('click', function () {
 		console.log('checking if state is valid');
 		stateInital = stateValid(input);
 		console.log('stateInital: ' + stateInital);
-		if(stateInitial === '') {
+		if(stateInital == '-1') {
 			Materialize.toast('Please enter a state or Zipcode!', 4000);
 		} else {
 			findState(stateInital);
@@ -34,7 +34,7 @@ $('#search-btn').on('click', function () {
 		console.log('checking if state initials are valid');
 		stateInital = initalValid(input);
 		console.log('stateInital: ' + stateInital);
-		if (stateInitial === '') {
+		if (stateInital == '-1') {
 			Materialize.toast('Please enter a state or Zipcode!', 4000);			
 		} else {
 			findState(stateInital);
