@@ -19,6 +19,7 @@ function drawChart(crID) {
 		//create arrays to store info
 		var industrynames=[];
 		var totals=[];
+		console.log(resp);
 
 		for (var i = 0; i < resp.response.industries.industry.length; i++) {
 			industrynames.push(resp.response.industries.industry[i]['@attributes'].industry_name);

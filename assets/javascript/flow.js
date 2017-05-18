@@ -19,12 +19,26 @@ $('#search-btn').on('click', function () {
 	event.preventDefault();
 	//Check if zipcodeisValid()
 	var input = $('#search').val().trim();
-	var stateInital;
+	var stateInitial;
 	if(isNaN(input) && input.length > 2) {
+		console.log('checking if state is valid');
 		stateInital = stateValid(input);
+		console.log('stateInital: ' + stateInital);
+		if(stateInitial === '') {
+			Materialize.toast('Please enter a state or Zipcode!', 4000);
+		} else {
+			findState(stateInital);
+		}
 	}
 	else if(isNaN(input) && input.length === 2) {
+		console.log('checking if state initials are valid');
 		stateInital = initalValid(input);
+		console.log('stateInital: ' + stateInital);
+		if (stateInitial === '') {
+			Materialize.toast('Please enter a state or Zipcode!', 4000);			
+		} else {
+			findState(stateInital);
+		}
 	}
 	else if(zipcodeIsValid(input)) {
 		findStateAndCity(input);
