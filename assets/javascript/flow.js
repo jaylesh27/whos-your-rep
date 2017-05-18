@@ -18,13 +18,21 @@ function bipartisanScore(party, democratVotes, republicanVotes) {
 $('#search-btn').on('click', function () {
 	event.preventDefault();
 	//Check if zipcodeisValid()
-	var query = $('#search').val().trim();
-	if(!zipcodeIsValid(query)) {
+	var input = $('#search').val().trim();
+	var stateInital;
+	if(isNaN(input) && input.length > 2) {
+		stateInital = stateValid(input);
+	}
+	else if(isNaN(input) && input.length === 2) {
+		stateInital = initalValid(input);
+	}
+	else if(zipcodeIsValid(input)) {
+		findStateAndCity(input);
+	} 
+	else if(!zipcodeIsValid(input)){
 		//If NO (not 5 characters/has letters etc)
 			//Throw modal under search bar to tell user to enter 5 numbers
 		Materialize.toast('Please enter a valid Zipcode!', 4000);
-	} else if (zipcodeIsValid(query)){
-		findStateAndCity(query);
 	}
 	
 	//added this to clear the input field out after user hits button
