@@ -8,7 +8,10 @@
 	width: 100%;
 }
 
-
+#houseMembers {
+	overflow: auto;
+	height: 400px;
+}
 #infoDiv {
 	width: 100%;
 }
