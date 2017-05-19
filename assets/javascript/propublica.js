@@ -72,6 +72,7 @@ $("#houseMembers").on("click", ".rep", function() {
   var repID = $(this).attr("crID");
   var name = $(this).attr('name');
   console.log(repID);
+  $('#repName').html(name);
   Materialize.toast('Loading ' + name + ', please wait!', 4000);
 
   var queryURL = 'https://api.propublica.org/congress/v1/members/' + repID + '.json'
@@ -100,7 +101,7 @@ $("#senateMembers").on("click", ".sen", function() {
   var name = $(this).attr('name');
   console.log(repID);
   Materialize.toast('Loading ' + name + ', please wait!', 4000);
-
+  $('#repName').html(name);
   var queryURL = 'https://api.propublica.org/congress/v1/members/' + repID + '.json';
 
   $.ajax({

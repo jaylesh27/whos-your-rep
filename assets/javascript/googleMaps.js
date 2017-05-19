@@ -7,7 +7,7 @@ var fullState = ['alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colo
 'nebraska', 'nevada', 'new hampshire',	'new jersey', 'new mexico', 'new york', 
 'north carolina', 'north dakota', 'ohio', 'oklahoma', 'oregon', 'pennsylvania', 
 'rhode island', 'south carolina', 'south dakota', 'tennessee', 'texas', 'utah', 
-'vermont', 'virginia', 'washington', 'west virginia', 'wisconsin', 'wyoming'];	
+'vermont', 'virginia', 'washington', 'west virginia', 'wisconsin', 'wyoming'];
 
 var shortState = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 
 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 
@@ -19,7 +19,7 @@ function stateValid(stateName) {
 	var search = stateName.toLowerCase();
 	var valid = false;
 	var index = 0;
-	var inital;
+	var inital=-1;
 	while(valid != true && index < fullState.length){
 		if(search === fullState[index]){
 			valid = true;
@@ -36,7 +36,7 @@ function initalValid(initals) {
 	var search = initals.toUpperCase();
 	var valid = false;
 	var index = 0;
-	var inital;
+	var inital=-1;
 	while(valid != true && index < shortState.length){
 		if(search === shortState[index]){
 			valid = true;
