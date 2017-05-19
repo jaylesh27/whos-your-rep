@@ -82,3 +82,23 @@ h4 {
 	border-bottom-width: 3px;
 	border-bottom-color: #000000;
 }
+
+p {
+	text-align: left;
+}
+
+p .R-bg {
+	background-color: #F26E4B;
+}
+
+li .D-bg {
+	background-color: #417CA6;
+}
+
+.carousel .carousel-item img .social-media-img {
+	height:32px;
+	width:32px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #000000;
+}
