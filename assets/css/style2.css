@@ -29,25 +29,7 @@
 	background-color: #20315a;
 }
 
-/*.jumbotron {
-	background-image: url("../images/chamber-01.jpg");
-	padding-top: 2%;
-	padding-bottom: 5%;
-	text-align: center;
-	font-style: italic;
-	font-family: serif;
-	font-size: 100px;
-	font-weight: bold;
-	color: white;
-}*/
 
-
-/*#rep-image {
-	display: inline-block;
-	max-width: 250px;
-	max-height: 200px;
-}
-*/
 #search-btn {
 	margin-top: 25px;
 }
@@ -83,15 +65,15 @@ h4 {
 	border-bottom-color: #000000;
 }
 
-p {
+/*p {
 	text-align: left;
-}
+}*/
 
-.collection .collection-item.avatar .R-bg {
+.collection-item.avatar.sen.R-bg, .collection-item.avatar.rep.R-bg {
 	background-color: #F26E4B;
 }
 
-.collection .collection-item.avatar .D-bg {
+.collection-item.avatar.sen.D-bg, .collection-item.avatar.rep.D-bg {
 	background-color: #417CA6;
 }
 
