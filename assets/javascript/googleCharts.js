@@ -48,3 +48,19 @@ function drawChart(crID) {
 		chart.draw(data, options);
 		});
 	};
+
+function drawChart2(houseRepublicans, houseDemocrats) {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Democrats', houseDemocrats],
+      ['Republicans', houseRepublicans],
+    ]);
+
+    var options = {
+      title: 'Democrat and Republican Reps',
+      pieHole: 0.4,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('mainStats'));
+    chart.draw(data, options);
+  }

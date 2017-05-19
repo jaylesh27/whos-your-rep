@@ -44,6 +44,8 @@ function proPublicaAPI (state, body) {
        }).done(function(data) {
           var propublicaResults = data.results;
           console.log(propublicaResults);
+          var houseDemocrats = 0;
+          var houseRepublicans = 0;
           for (var i = 0; i < propublicaResults.length; i++) {
             if (body == 'house') {
               console.log(propublicaResults[i].crp_id);
@@ -52,28 +54,15 @@ function proPublicaAPI (state, body) {
             else if (body == 'senate') {
               appendSenateMember(propublicaResults[i].name, propublicaResults[i].party, propublicaResults[i].twitter_id, propublicaResults[i].id);
             }
+            if (propublicaResults[i].party === "D") {
+              houseDemocrats++;
+            }else if (propublicaResults[i].party === "R") {
+              houseRepublicans++;
+            }
           }
-          //console.log(propublicaResults);
-/*          for (var i = 0; i < propublicaResults.length; i++) {
-            $("#representatives").append(
-
-          "<li>" + 
-            "<div class='collapsible-header rep' id = 'rep-"+i+"'>" + 
-              propublicaResults[i].name + 
-            "</div>" + 
-            "<div class='collapsible-body'>" +
-            "<span>" +
-              "<img src='https://twitter.com/" + propublicaResults[i].twitter_id +"/profile_image?size=original' id = 'rep-image'>" +
-              "<p>Party: " + propublicaResults[i].party + "</p>" +
-              "<p>District: " + propublicaResults[i].district + "</p>" +
-            "</span>" + 
-            "</div>" +
-          "</li>"
-
-          $("#rep-"+i).attr("rep-ID", propublicaResults[i].id);
-          // console.log($("#rep").attr("rep-ID"));
-          }
-          Materialize.showStaggeredList('#profiles');*/
+          console.log(houseRepublicans);
+          console.log(houseDemocrats);
+          drawChart2(houseRepublicans, houseDemocrats);
        });
 };
 
@@ -100,6 +89,7 @@ $("#houseMembers").on("click", ".rep", function() {
           console.log(memberResults);
           drawChart(memberResults["0"].crp_id);
           Materialize.fadeInImage('#infoDiv');
+
        });
 });
 

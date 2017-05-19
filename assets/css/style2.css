@@ -8,6 +8,10 @@
 	width: 100%;
 }
 
+#mainStats {
+	width: 100%;
+}
+
 #houseMembers {
 	overflow: auto;
 	height: 400px;
