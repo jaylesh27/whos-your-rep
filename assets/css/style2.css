@@ -87,11 +87,11 @@ p {
 	text-align: left;
 }
 
-p .R-bg {
+.collection .collection-item.avatar .R-bg {
 	background-color: #F26E4B;
 }
 
-li .D-bg {
+.collection .collection-item.avatar .D-bg {
 	background-color: #417CA6;
 }
 
