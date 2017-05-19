@@ -36,12 +36,12 @@ function populateFourthPanel(name, twitter, facebook, committees){
   //if twitter exists, then link it
   if (twitter != '') {
     //pic linked to twitter
-    $('#contactDiv').append('<a href="https://twitter.com/'+twitter+'"><img src="assets/images/twitter_bird.png" height="64px" width="80px"></a>');
+    $('#contactDiv').append('<a href="https://twitter.com/'+twitter+'"><img src="assets/images/twitter_bird.png" height="128px" width="154px"></a>');
   }
   //if facebook links, then link it
   if (facebook != '') {
     //pic linked to facebook
-    $('#contactDiv').append('<a href="https://www.facebook.com/'+facebook+'"><img src="assets/images/facebook_symbol.png" height="64px" width="64px"></a>');
+    $('#contactDiv').append('<a href="https://www.facebook.com/'+facebook+'"><img src="assets/images/facebook_symbol.png" height="128px" width="128px"></a>');
   }
 }
 
