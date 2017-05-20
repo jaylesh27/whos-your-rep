@@ -10,13 +10,13 @@ function appendRepMember (name, party, district, twitterHandle, crID) {
             );
 };
 
-function appendSenateMember (name, party, twitterHandle, crID) {
+function appendSenateMember (name, party, role, twitterHandle, crID) {
   $('#senateMembers').append(
             '<li class=\"collection-item avatar sen ' + party + '-bg \" crid = ' + crID + ' name='+name+'>' +
                   '<img src="https://twitter.com/' + twitterHandle +'/profile_image?size=original" alt="" class="circle">' +
                   '<span class="title">' + name + '</span>' +
                   '<p>Party: '+ party + ' <br> ' +
-                  'Elected: ' + 'placeholder' + 
+                  role + 
                   '</p>' +
               '</li>'
             );
@@ -30,7 +30,7 @@ function populateFourthPanel(name, twitter, facebook, committees){
   //Populate 4th
   $('#contactDiv').append('<h4>' + name + '</h4>');
   for (var i = 0; i<committees.length; i++) {
-    $('#contactDiv').append('<p>' + committees[i] + '</p>');
+    $('#contactDiv').append('<p class = "text-left">' + committees[i] + '</p>');
   }
   $('#contactDiv').append('<h4>Social Media</h4>');
   //if twitter exists, then link it
@@ -66,6 +66,7 @@ function proPublicaAPI (state, body) {
          headers: {'X-API-Key': '45Jqi2YUkG5u36euvspZI9yLR0dAOrz545XRSwW1'}
        }).done(function(data) {
           var propublicaResults = data.results;
+          console.log('PRO PUBLICA RESULTS');
           console.log(propublicaResults);
           var houseDemocrats = 0;
           var houseRepublicans = 0;
@@ -75,7 +76,7 @@ function proPublicaAPI (state, body) {
               appendRepMember(propublicaResults[i].name, propublicaResults[i].party, propublicaResults[i].district, propublicaResults[i].twitter_id, propublicaResults[i].id);              
             }
             else if (body == 'senate') {
-              appendSenateMember(propublicaResults[i].name, propublicaResults[i].party, propublicaResults[i].twitter_id, propublicaResults[i].id);
+              appendSenateMember(propublicaResults[i].name, propublicaResults[i].party, propublicaResults[i].role, propublicaResults[i].twitter_id, propublicaResults[i].id);
             }
             if (propublicaResults[i].party === "D") {
               houseDemocrats++;
