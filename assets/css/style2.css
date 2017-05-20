@@ -90,3 +90,7 @@ p {
 	border-style:solid;
 	border-color:#FFFFFF;
 }
+
+.title{
+	font-weight:bold;
+}
